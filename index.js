@@ -46,7 +46,7 @@ async function exec(command, options = {}) {
   command = String(command);
   return execa.command(command, {
     shell: true,
-    stdio: "inherit",
+    stdio: "pipe",
     preferLocal: true,
     ...options,
   }).catch(error => {

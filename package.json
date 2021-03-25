@@ -11,7 +11,15 @@
     "url": "https://github.com/chriscalo"
   },
   "main": "index.js",
+  "scripts": {
+    "test": "ava --verbose",
+    "test:watch": "ava --verbose --watch"
+  },
   "devDependencies": {
     "ava": "^3.15.0"
+  },
+  "dependencies": {
+    "execa": "^5.0.0",
+    "pretty-error": "^3.0.3"
   }
 }
