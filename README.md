@@ -12,13 +12,20 @@ const command = new CommandBuilder("foo", [
 ]); //=> foo file.text --flag-1 --flag-2 -a
 ```
 
+Convert command to a string:
+
+``` js
+String(command);
+command.toString();
+`command = ${command}`;
+```
+
 Use fluent API to add args/flags after initial command is created:
 
 ``` js
 const command = new CommandBuilder("foo");
 command.arg("--hello");
-console.log(command.toString()) //=> foo --hello
-});
+console.log(command); //=> foo --hello
 ```
 
 Pass in a truthy/falsy condition to optionally add args/flags:
