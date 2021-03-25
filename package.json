@@ -1,0 +1,17 @@
+{
+  "name": "shell-command-builder",
+  "description": "Construct and execute shell commands",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chriscalo/shell-command-builder"
+  },
+  "author": {
+    "name": "Chris Calo",
+    "url": "https://github.com/chriscalo"
+  },
+  "main": "index.js",
+  "devDependencies": {
+    "ava": "^3.15.0"
+  },
+  "version": "0.1.0"
+}
