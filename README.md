@@ -11,9 +11,9 @@ npm install shell-command-builder
 Require or import the module:
 
 ``` js
-const { CommandBuilder, exec } = require("shell-command-builder");
+const { CommandBuilder, run, interactive } = require("shell-command-builder");
 // OR 
-import { CommandBuilder, exec } from "shell-command-builder";
+import { CommandBuilder, run, interactive } from "shell-command-builder";
 ```
 
 Build shell commands with arguments:
@@ -61,4 +61,10 @@ Run commands:
 ``` js
 const command = new CommandBuilder("echo 'hello, world!'");
 const { stdout } = await command.run(); //=> hello, world!
+// OR
+const { stdout } = await run(command); //=> hello, world!
+// OR
+await command.interactive(); //=[shell]=> hello, world!
+// OR
+await interactive(command); //=[shell]=> hello, world!
 ```
