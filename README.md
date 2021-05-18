@@ -37,7 +37,7 @@ const options = {
   quiet: false,
 };
 command.arg("--watch", options.watch); // added
-command.arg("--quiet", options.false); // not added
+command.arg("--quiet", options.quiet); // not added
 console.log(command); //=> foo --watch
 ```
 
