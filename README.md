@@ -1,6 +1,21 @@
 # shell-command-builder
 Construct and execute shell commands
 
+Install:
+``` sh
+yarn add shell-command-builder
+# OR
+npm install shell-command-builder
+```
+
+Require or import the module:
+
+``` js
+const { CommandBuilder, exec } = require("shell-command-builder");
+// OR 
+import { CommandBuilder, exec } from "shell-command-builder";
+```
+
 Build shell commands with arguments:
 
 ``` js
