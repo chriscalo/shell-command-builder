@@ -1,9 +1,11 @@
 const test = require("ava");
-const { CommandBuilder, exec } = require("./index.js");
+const fs = require("fs");
+const path = require("path");
+const { CommandBuilder, run } = require("./index.js");
 
-test("exports CommandBuilder class and exec() function", (t) => {
+test("exports CommandBuilder class and run() function", (t) => {
   t.truthy(isClass(CommandBuilder));
-  t.is(typeof exec, "function");
+  t.is(typeof run, "function");
 });
 
 test("builds command with args", (t) => {

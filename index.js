@@ -38,11 +38,18 @@ class CommandBuilder {
   // Execute current command and asynchronously return output
   async run(options = {}) {
     const command = this.toString();
-    return exec(command, options);
+    return run(command, options);
+  }
+  
+  // Execute current command interactively
+  async interactive(options = {}) {
+    const command = this.toString();
+    return interactive(command, options);
   }
 }
 
-async function exec(command, options = {}) {
+// Execute a command and asynchronously return output
+async function run(command, options = {}) {
   command = String(command);
   return execa.command(command, {
     shell: true,
@@ -54,8 +61,24 @@ async function exec(command, options = {}) {
   });
 }
 
-exports.CommandBuilder = CommandBuilder;
-exports.exec = exec;
+// Execute a command interactively
+async function interactive(command, options = {}) {
+  command = String(command);
+  return execa.command(command, {
+    shell: true,
+    preferLocal: true,
+    ...options,
+    stdio: "inherit",
+  }).catch(error => {
+    console.log(prettyError(error));
+  });
+}
+
+module.exports = {
+  CommandBuilder,
+  run,
+  interactive,
+};
 
 function prettyError(error) {
   return new PrettyError().render(error);
