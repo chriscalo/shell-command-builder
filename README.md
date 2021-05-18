@@ -32,8 +32,12 @@ Pass in a truthy/falsy condition to optionally add args/flags:
 
 ``` js
 const command = new CommandBuilder("foo");
-command.arg("--watch", true); // added
-command.arg("--quiet", false); // not added
+const options = {
+  watch: true,
+  quiet: false,
+};
+command.arg("--watch", options.watch); // added
+command.arg("--quiet", options.false); // not added
 console.log(command); //=> foo --watch
 ```
 
